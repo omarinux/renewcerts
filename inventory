@@ -1,0 +1,36 @@
+[localhost]
+localhost ansible_host=127.0.0.1
+
+[localhost:vars]
+validcert=/root/certs_renewwd/
+
+repocert=/root/certs/
+
+ssl_dir=/etc/ssl/certs
+ssl_privatedir=/etc/ssl/private
+
+ssl_dir_nginx=/etc/ssl/certs_nginx/
+ssl_privatedir_nginx=/etc/ssl/private_nginx/
+
+[linux_apache]
+web2.cipensoio.com ansible_host=127.0.0.1
+web3.cipensoio.com ansible_host=127.0.0.1
+
+[linux_apache:vars]
+
+validcert=/root/certs_renewwd/
+repocert=/root/certs/
+ssl_dir=/etc/ssl/certs
+ssl_privatedir=/etc/ssl/private
+
+
+[linux_nginx]
+web4.cipensoio.com ansible_host=127.0.0.1
+web5.cipensoio.com ansible_host=127.0.0.1
+
+[linux_nginx:vars]
+
+validcert=/root/certs_renewwd/
+repocert=/root/certs/
+ssl_dir_nginx=/etc/ssl/certs_nginx/
+ssl_privatedir_nginx=/etc/ssl/private_nginx/

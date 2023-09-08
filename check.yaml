@@ -1,0 +1,118 @@
+- name: find cerfication files & expiration dates
+  hosts: localhost
+  gather_facts: false
+  serial: 1
+
+  tasks:
+    - name: Find cert files under /etc/pki/tls/certs
+      find:
+        paths: "{{ repocert }}"
+        file_type: file
+        patterns: "*.crt"
+        recurse: yes
+        excludes: "localhost.crt"
+      register: find_result
+
+    - name: Check validity
+      community.crypto.x509_certificate_info:
+      #openssl_certificate_info:
+        path: "{{ item.path }}"
+        valid_at:
+          point_1: "+1d"
+          point_2: "+10d"
+      register: cert_info
+      loop: "{{ find_result.files }}"
+
+    - name: Filter out valid certs
+      set_fact:
+        outdated_certs: "{{ cert_info | json_query('results[? !(valid_at.point_1) || !(valid_at.point_2)]') }}"
+
+    - name: debug no valid cert common name
+      debug:
+        msg: "{{ item }}"
+      with_items: "{{ outdated_certs | json_query('[*].issuer.commonName') }}"
+      ignore_errors: yes
+
+    - block:
+        - name: Check that all certificates are valid
+          assert:
+            that:
+              - outdated_certs | count == 0
+      
+      rescue:
+        - name: Show info about outdated certs
+          debug:
+            msg: >-
+              {{ { "Outdated Certs": outdated_certs | json_query("[].issuer.commonName") } }}
+        
+#        - fail:
+#            msg: "Outdated certs found. See list above"
+
+
+- name: sssss
+  hosts: localhost
+  gather_facts: false
+  serial: 1
+
+
+  tasks:
+    
+    - name: get file stat to be able to perform a check in the following task
+      local_action: stat path="/root/certs_renewwd/{{ item }}.crt"
+      register: file
+      with_items: "{{ outdated_certs | json_query('[*].issuer.commonName') }}"
+    
+    - name: Verifying if file exists
+      debug: msg="File {{ item.item }} exist"
+      with_items: "{{ file.results }}"
+      when: item.stat.exists
+
+    - name: replace valid crt APACHE
+      ansible.builtin.copy:
+        src: "{{ validcert }}/{{ item.item }}.crt"
+        dest: "{{ ssl_dir }}"
+        mode: '0644'
+      with_items: "{{ file.results }}"
+      when: (item.stat.exists) and (item.item in groups['linux_apache'])
+      ignore_errors: yes
+
+    - name: replace valid crt NGINX
+      ansible.builtin.copy:
+        src: "{{ validcert }}/{{ item.item }}.crt"
+        dest: "{{ ssl_dir_nginx }}"
+        mode: '0644'
+      with_items: "{{ file.results }}"
+      when: (item.stat.exists) and (item.item in groups['linux_nginx'])
+      ignore_errors: yes
+
+    - name: replace valid crt to default repo
+      ansible.builtin.copy:
+        src: "{{ validcert }}/{{ item.item }}.crt"
+        dest: "{{ repocert }}"
+        mode: '0644'
+      with_items: "{{ file.results }}"
+      when: item.stat.exists
+      ignore_errors: yes
+      register: apachecertreplaced
+
+    - name: rename new certificate in new repo
+      command: "mv {{ validcert }}/{{ item.item }}.crt {{ validcert }}/{{ item.item }}.crt_done"
+      with_items: "{{ file.results }}"
+      when: item.stat.exists
+      ignore_errors: yes
+
+    - name: reload Apache
+      ansible.builtin.service:
+        name: apache2
+        state: reloaded
+      delegate_to: "{{ item }}" 
+      with_items: "{{ outdated_certs | json_query('[*].issuer.commonName') }}"
+      when: (apachecertreplaced.changed) and (item in groups['linux_apache'])
+
+    - name: Restart NGINX
+      ansible.builtin.service:
+        name: nginx
+        state: reloaded
+      delegate_to: "{{ item }}"
+      with_items: "{{ outdated_certs | json_query('[*].issuer.commonName') }}"
+      when: (apachecertreplaced.changed) and (item in groups['linux_nginx'])
