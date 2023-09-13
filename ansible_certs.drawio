@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net" modified="2023-09-12T07:49:58.154Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="1epo1sOm0f7UqKnETLby" version="21.7.2" type="device">
+  <diagram name="Page-1" id="0QfhhmeY12w9vwNbHh4k">
+    <mxGraphModel dx="954" dy="609" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="lBhe797xp0qzkPB9WhaU-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="lBhe797xp0qzkPB9WhaU-1" target="lBhe797xp0qzkPB9WhaU-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lBhe797xp0qzkPB9WhaU-9" value="Replace Expires&lt;br&gt;SSL Certificates" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="lBhe797xp0qzkPB9WhaU-6">
+          <mxGeometry x="0.617" y="-1" relative="1" as="geometry">
+            <mxPoint x="-25" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lBhe797xp0qzkPB9WhaU-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="lBhe797xp0qzkPB9WhaU-1" target="lBhe797xp0qzkPB9WhaU-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lBhe797xp0qzkPB9WhaU-10" value="Replace Expires&lt;br&gt;SSL Certificates" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="lBhe797xp0qzkPB9WhaU-7">
+          <mxGeometry x="0.4885" y="-1" relative="1" as="geometry">
+            <mxPoint x="-3" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lBhe797xp0qzkPB9WhaU-1" value="Ansible" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/generic_server.svg;" vertex="1" parent="1">
+          <mxGeometry x="190" y="240" width="28.000000000000004" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lBhe797xp0qzkPB9WhaU-2" value="" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/web_server.svg;" vertex="1" parent="1">
+          <mxGeometry x="410" y="190" width="40" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lBhe797xp0qzkPB9WhaU-3" value="" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/web_server.svg;" vertex="1" parent="1">
+          <mxGeometry x="410" y="310" width="40" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lBhe797xp0qzkPB9WhaU-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="lBhe797xp0qzkPB9WhaU-4" target="lBhe797xp0qzkPB9WhaU-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lBhe797xp0qzkPB9WhaU-8" value="Check Expires SSL&lt;br&gt;Certificates" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="lBhe797xp0qzkPB9WhaU-5">
+          <mxGeometry x="-0.0355" relative="1" as="geometry">
+            <mxPoint y="17" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lBhe797xp0qzkPB9WhaU-4" value="Git Certificates&lt;br&gt;Repo" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.git_repository;" vertex="1" parent="1">
+          <mxGeometry x="188.62" y="90" width="30.77" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lBhe797xp0qzkPB9WhaU-12" value="" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/web_server.svg;" vertex="1" parent="1">
+          <mxGeometry x="420" y="200" width="40" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lBhe797xp0qzkPB9WhaU-13" value="Multiple Apache Web Server" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/web_server.svg;" vertex="1" parent="1">
+          <mxGeometry x="430" y="210" width="40" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lBhe797xp0qzkPB9WhaU-14" value="" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/web_server.svg;" vertex="1" parent="1">
+          <mxGeometry x="420" y="320" width="40" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lBhe797xp0qzkPB9WhaU-15" value="Multiple Nginx Web Server" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/web_server.svg;" vertex="1" parent="1">
+          <mxGeometry x="430" y="330" width="40" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
