@@ -1,19 +1,22 @@
-<mxfile host="app.diagrams.net" modified="2023-09-13T15:31:27.685Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="g_nqIDQhfN1nvyzvqU6l" version="21.7.5" type="github">
+<mxfile host="app.diagrams.net" modified="2023-09-13T15:34:57.949Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="wHI94FLVnWLaw151DfRO" version="21.7.5" type="github">
   <diagram name="Page-1" id="0QfhhmeY12w9vwNbHh4k">
     <mxGraphModel dx="1147" dy="606" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="lBhe797xp0qzkPB9WhaU-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="lBhe797xp0qzkPB9WhaU-4" target="lBhe797xp0qzkPB9WhaU-1" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="lBhe797xp0qzkPB9WhaU-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="lBhe797xp0qzkPB9WhaU-4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="274" y="660" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="lBhe797xp0qzkPB9WhaU-8" value="Check Expires SSL&lt;br&gt;Certificates" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="lBhe797xp0qzkPB9WhaU-5" vertex="1" connectable="0">
           <mxGeometry x="-0.0355" relative="1" as="geometry">
             <mxPoint y="17" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="lBhe797xp0qzkPB9WhaU-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="1" source="lBhe797xp0qzkPB9WhaU-1" target="lBhe797xp0qzkPB9WhaU-2" edge="1">
+        <mxCell id="lBhe797xp0qzkPB9WhaU-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="1" target="lBhe797xp0qzkPB9WhaU-2" edge="1">
           <mxGeometry relative="1" as="geometry">
+            <mxPoint x="287.9999820799885" y="685.04" as="sourcePoint" />
             <Array as="points">
               <mxPoint x="341" y="685" />
               <mxPoint x="341" y="617" />
@@ -25,8 +28,9 @@
             <mxPoint x="-25" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="lBhe797xp0qzkPB9WhaU-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="lBhe797xp0qzkPB9WhaU-1" target="lBhe797xp0qzkPB9WhaU-3" edge="1">
+        <mxCell id="lBhe797xp0qzkPB9WhaU-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="lBhe797xp0qzkPB9WhaU-3" edge="1">
           <mxGeometry relative="1" as="geometry">
+            <mxPoint x="287.9999820799885" y="685.04" as="sourcePoint" />
             <Array as="points">
               <mxPoint x="341" y="685" />
               <mxPoint x="341" y="755" />
@@ -66,8 +70,10 @@
         <mxCell id="lBhe797xp0qzkPB9WhaU-15" value="Multiple Nginx Web Server" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/web_server.svg;" parent="1" vertex="1">
           <mxGeometry x="500" y="750" width="40" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="uuZfRnMhYAiif19iNV4r-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="uuZfRnMhYAiif19iNV4r-2" target="lBhe797xp0qzkPB9WhaU-1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="uuZfRnMhYAiif19iNV4r-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="uuZfRnMhYAiif19iNV4r-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="274" y="710" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="uuZfRnMhYAiif19iNV4r-7" value="Replace Expires&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;SSL Certificates" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="uuZfRnMhYAiif19iNV4r-6">
           <mxGeometry x="-0.6246" y="1" relative="1" as="geometry">
@@ -89,9 +95,6 @@
         <mxCell id="uuZfRnMhYAiif19iNV4r-10" value="Renewed" style="image;html=1;image=img/lib/clip_art/general/Empty_Folder_128x128.png" vertex="1" parent="1">
           <mxGeometry x="320" y="380" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="lBhe797xp0qzkPB9WhaU-1" value="Ansible" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/generic_server.svg;" parent="1" vertex="1">
-          <mxGeometry x="260" y="660" width="28.000000000000004" height="50" as="geometry" />
-        </mxCell>
         <mxCell id="lBhe797xp0qzkPB9WhaU-4" value="Git Certificates&lt;br&gt;Repo" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.git_repository;" parent="1" vertex="1">
           <mxGeometry x="258.62" y="510" width="30.77" height="40" as="geometry" />
         </mxCell>
@@ -100,6 +103,9 @@
         </mxCell>
         <mxCell id="uuZfRnMhYAiif19iNV4r-18" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Service_Certificates.svg;" vertex="1" parent="1">
           <mxGeometry x="220" y="380" width="35" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="uuZfRnMhYAiif19iNV4r-20" value="Ansible" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://static-00.iconduck.com/assets.00/file-type-ansible-icon-256x256-ubp9wpth.png;" vertex="1" parent="1">
+          <mxGeometry x="256.90000000000003" y="668" width="34.2" height="34.2" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
