@@ -34,3 +34,12 @@ validcert=/root/certs_renewwd/
 repocert=/root/certs/
 ssl_dir_nginx=/etc/ssl/certs_nginx/
 ssl_privatedir_nginx=/etc/ssl/private_nginx/
+
+[linux_tomcat]
+web6.cipensoio.com ansible_host=web6.cipensoio.com keystore=keystore6 alias=web6
+web7.cipensoio.com ansible_host=web7.cipensoio.com keystore=keystore7 alias=web7
+
+[linux_tomcat:vars]
+
+validcert=/root/certs_renewwd/
+repocert=/root/certs/
