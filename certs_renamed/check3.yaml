@@ -1,0 +1,66 @@
+- name: find cerfication files & expiration dates
+  hosts: localhost
+  gather_facts: false
+    #serial: 1
+
+  tasks:
+    - name: Find cert files under /etc/pki/tls/certs
+      find:
+        paths: "/root/certs_renamed"
+        file_type: file
+        patterns: "*.crt"
+        recurse: yes
+        excludes: "localhost.crt"
+      register: find_result
+
+    - name: Check validity
+      community.crypto.x509_certificate_info:
+      #openssl_certificate_info:
+        path: "{{ item.path }}"
+        valid_at:
+          point_1: "+1d"
+          point_2: "+10d"
+      register: cert_info
+      loop: "{{ find_result.files }}"
+      no_log: true
+
+    - name: Filter out valid certs
+      set_fact:
+        outdated_certs: "{{ cert_info | json_query('results[? !(valid_at.point_1) || !(valid_at.point_2)]') }}"
+    
+          #    - name: Set List Cert CommonName
+          #set_fact:
+         #comname: "{{ outdated_certs | json_query('[*].issuer.commonName') }}"
+
+    - name: Show the Subject Alt Names of the certificate
+      set_fact:
+        comname: "{{ cert_info | json_query('results [*].issuer.commonName') }}"
+       #register: comname
+
+    - name: debug no valid cert common name
+      debug:
+        msg: "{{ item }}"
+      with_items: "{{ comname }}"
+      ignore_errors: yes
+
+    - name: debug no valid cert file
+      debug:
+        msg: "{{ item.path }}"
+      with_items: "{{ find_result.files }}"
+
+    - name: Loop over two lists
+      ansible.builtin.debug:
+        msg: "{{ item.0.path }} will be /root/certs_renamed/{{ item.1 }}.crt"
+      loop: "{{ find_result.files | zip(comname) | list }}"
+
+    - name: Reename Cert Files with CommonName
+      command: "mv {{ item.0.path }} /root/certs_renamed/{{ item.1 }}.crt"
+      loop: "{{ find_result.files | zip(comname) | list }}"
+      when: "'{{ item.0.path }}' != '/root/certs_renamed/{{ item.1 }}.crt'"
+
+        #    - name: Remove crt with old name
+        #ansible.builtin.file:
+        #path: "{{ item.0.path }}"
+        #state: absent
+        #loop: "{{ find_result.files | zip(comname) | list }}"
+        #when: "'{{ item.0.path }}' != '/root/certs_renamed/{{ item.1 }}.crt'"
