@@ -12,9 +12,13 @@ ssl_privatedir=/etc/ssl/private
 ssl_dir_nginx=/etc/ssl/certs_nginx/
 ssl_privatedir_nginx=/etc/ssl/private_nginx/
 
+renamed=/root/certs_renamed/
+
 [linux_apache]
 web2.cipensoio.com ansible_host=127.0.0.1
 web3.cipensoio.com ansible_host=127.0.0.1
+web8.cipensoio.com ansible_host=172.31.17.80
+web30.cipensoio.com ansible_host=web30.cipensoio.com
 
 [linux_apache:vars]
 
@@ -27,6 +31,8 @@ ssl_privatedir=/etc/ssl/private
 [linux_nginx]
 web4.cipensoio.com ansible_host=127.0.0.1
 web5.cipensoio.com ansible_host=127.0.0.1
+web21.cipensoio.com ansible_host=web21.cipensoio.com
+web31.cipensoio.com ansible_host=web31.cipensoio.com
 
 [linux_nginx:vars]
 
@@ -38,8 +44,10 @@ ssl_privatedir_nginx=/etc/ssl/private_nginx/
 [linux_tomcat]
 web6.cipensoio.com ansible_host=web6.cipensoio.com keystore=keystore6 alias=web6
 web7.cipensoio.com ansible_host=web7.cipensoio.com keystore=keystore7 alias=web7
+web22.cipensoio.com ansible_host=web22.cipensoio.com keystore=keystore7 alias=web22
 
 [linux_tomcat:vars]
 
 validcert=/root/certs_renewwd/
 repocert=/root/certs/
+ssl_dir_tomcat_tmp=/tmp/
